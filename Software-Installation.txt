@@ -1,0 +1,13 @@
+
+git clean -fdx -->> To Remove All UnTracked Files From Git.
+
+-------
+How to Set VisualVM in Intellij
+
+1. Downloaded the VisualVm Launcher Jar For IntelliJ And then In Intellij settings -> Plugin -> Install Plugins From Disk File ->
+Then Select JVisualVM Launcher Jar File And Install it.
+2.Download and extract the Visual VM Tool From It's Official Website.
+3. After Restarting Intellij, Just Open the Intellij And Add it's Executable file location In IntelliJ's VisualVM Launcher Configuration.
+4. Debug/Launch Application by Visual VM in Intellij.
+
+ 

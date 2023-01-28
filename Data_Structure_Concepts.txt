@@ -1,0 +1,110 @@
+Data Structure Notes - Theory 
+
+1. Linked List Insertion Time Complexity is O(n) 
+Because we just need to search till that element is reached.
+
+2. Linked List Deletion Time Complexity is O(n)+1.
+Because n is to reach till that location of the element and 1 for deleting that element by changing the reference of previous node to next node.
+
+** When we need only one key then we should prioritize only set instead of HashMap As set is also having contains method and we can iterate set using forEach Loop Only. 
+
+
+Java Tuples :- 
+a. It is a type of data structure that allows us to store the elements in to it.
+b. It is similar to list but the difference is that it is immutable means we can not alter the tuple once it is created.
+c. Tuple can contain any datatypes and 2 Elements tuple known as pair and 3 elements tuple known as Triple and 4 elements tuple known as quad.
+
+d. 2 Elements Tuple -> Pair pair = new Pair<>("One", 1);
+e. 3 Elements Tuple -> Triple triple = new Triple<>("One", "Two", 3);
+f. 4 element tuple -> Quad quad = new Quad<>("One", "Two", "Three", 4);
+g. the Set method of the tuple will not change the initial tupple but will create a new tuple with updated data. 
+
+
+BIFunction in java :-> 
+1.  BiFunction<T,U,R> :-> It is something will take only 2 args as input (T, U) and  will return result as R. 
+2.  Function(T,R) :-> It takes only 2 args and will process both and will return the result as R. 
+3.  here we do have apply and andThen method where apply will do the processing and return the result where andThen will be called by one function to call second function by passing the result of first to it and then will call finally apply to generate the final result. 
+
+
+Best java Books ->
+1. Effective Java 
+2. Head First design patterns 
+3. Spring in Action.
+4. Java Concurreny in practice. 
+
+
+** Quick Select Algorithm is having best average-case performance but having poor worst case performance. As QuickSelect is having it's pivot point on the end of
+sorted array so before that pivot all elements are sorted and after that all elements are unsorted. so that's why it makes average time complexity as O(n) but 
+worst time complexity as o(n^2) And it is inplace Algorithm.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+garbage Collection Notes -> 
+
+1. G1GC :- “Garbage-first” garbage collector. 
+
+A.instead of splitting the heap into 3 big regions, it partitions it into a set of lots of equal-sized ones.
+B. As Name Suggests, Garbage First with the Most Garbage.
+C. Upon startup, the Java Virtual Machine (JVM) sets the region size. The region sizes can vary from 1 MB to 32 MB depending on the heap size.
+D. The goal is to have no more than 2048 regions
+E. G1 GC uses the Snapshot-At-The-Beginning (SATB) algorithm, which takes a snapshot of the set of live objects in the heap at the start of a marking cycle, and the objects allocated since the start of the marking cycle.
+F. If A Region is containing none survivor Object means it is ready to full garbage collection then it will be unassigned dairectly nd no work will be done here.
+G. If Anytime Someone neads the much Heap, then Garbage Collection, First will take the regions which is ready for full garbage Collection so that it needs to do less efforts to collect the heap space.
+H. The downside is that the G1 doesn’t perform well with small heaps.If the G1 has too little heap available, you will see “Full GC”s in the GC log.
+
+Phases of the Marking Cycle
+
+A. Initial mark phase: The G1 GC marks the roots during this phase. This phase is piggybacked on a normal (STW) young garbage collection.
+Root region scanning phase: The G1 GC scans survivor regions of the initial mark for references to the old generation and marks the referenced objects. This phase runs concurrently with the application (not STW) and must complete before the next STW young garbage collection can start.
+Concurrent marking phase: The G1 GC finds reachable (live) objects across the entire heap. This phase happens concurrently with the application, and can be interrupted by STW young garbage collections.
+Remark phase: This phase is STW collection and helps the completion of the marking cycle. G1 GC drains SATB buffers, traces unvisited live objects, and performs reference processing.
+Cleanup phase: In this final phase, the G1 GC performs the STW operations of accounting and RSet scrubbing. During accounting, the G1 GC identifies completely free regions and mixed garbage collection candidates. The cleanup phase is partly concurrent when it resets and returns the empty regions to the free list.
+
+-XX:+UnlockExperimentalVMOptions
+-XX:G1HeapRegionSize=n ( It can be increased as if it will be lower size than each object will be contained by more than 1 Regions But Increasing that also by a limit would be having adverse effect)
+-XX:MaxGCPauseMillis=200 ( It can be increased for better throughput and can be decreased for latency)
+-XX:G1NewSizePercent=5
+-XX:G1MaxNewSizePercent=60
+-XX:ParallelGCThreads=16
+-XX:ConcGCThreads=4 ( sets n to Approximately n/4 to parallel Gc Threads)
+-XX:InitiatingHeapOccupancyPercent=45 
+
+Approach To Avoid the out of memory error :-> 
+1. We can make InitiatingHeapOccupancyPercent somewhat lower so that Garbage Collection will start earlier that reaching to out of memory error.
+2. 
+
+--Avoid explicitly setting young generation size.
+
+
+
+Comparative Analysis with ParallelGC.
+i) With the ParallelGC, all collections stop the application threads.
+ii) G1, however, will only “stop-the-world” during a full garbage collection. 
+iii) The G1 GC reduces heap fragmentation by incremental parallel copying of live objects from one or more sets of regions (called Collection Set (CSet)) into different new region(s) to achieve compaction. 
+iV) The goal is to reclaim as much heap space as possible, starting with those regions that contain the most reclaimable space, while attempting to not exceed the pause time goal.
+V) 

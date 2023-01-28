@@ -1,0 +1,28 @@
+Effective Java Notes. 
+
+1. Static factory can help us to  create the service Factory By Decoupling the implementation from it's clients. 
+--In Service factory we have 3 Components. One Service Implementation, 2 Used to register implementation by producer, 3 is the Service APIs Which will be called by clients as per requirement. 
+-- In case of JDBC, registerDriver is the provider registration API, DriverManager.getConnection is the service access API, and Driver is the service provider interface
+
+2. Limitatiuon of static factory design pattern is classes without private and public consutructor can not be subclasses.
+
+** static factory methods and public constructors both have their uses, and it pays to understand their relative merits.
+
+3. So Constructor and Static Factory are having there relative merits but generally static factory methods gets preference. 
+
+Example :- 
+Date d = Date.from(instant);
+• of—An aggregation method that takes multiple parameters and returns an instance of this type that incorporates them, for example:
+Set<Rank> faceCards = EnumSet.of(JACK, QUEEN, KING);
+
+• valueOf—A more verbose alternative to from and of, for example:
+BigInteger prime = BigInteger.valueOf(Integer.MAX_VALUE);
+
+4. take scenario where we would be in need is that in food package we need to print the 20 Ingrediants where 2 are mandatory and common in each and rest can have only few fields as non Zero. 
+
+Alternative-I :- telescoping design pattern so that we will have one constructor to have only 2 as mandatory fields and other one will have 2 Mand and 1 Optnal field and like that we will have all possible combination but is not scalable solution and approach. 
+
+Alternative-II :- java Beans pattern help us to avoid the all dis-advnatages of Telescoping design patterns and better. 
+Disadvtage :- it preclude the possibility to make the class immutable and threadsafe. 
+
+Alternative-III :- By using builder patten, It takes the Advantage of Telescoping Pattern and removes the dis-advnatages of Java Beans Pattern. 

@@ -1,0 +1,102 @@
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------
+1. Find Pair with given Sum in the array.
+-- We will Store Each Element and will Check the existance of sum - element Existance. 
+
+2. Find Sub-Array With Zero Sum.
+-- Insert Zero in the starting.
+-- Insert the Sum at each element in Map and Monitor if that sum appears again in the Further Itertion if Yes than Means Zero Sub-Array Sum Exists.
+
+3. Sort Binary Array in Linear Time.
+-- Iterate For Loop in Forward Direction and Count Number of Zero. and then Insert First That Many Zero in Array and (arr.length- Zero's Count) in to that Array.
+
+**4. Find the largest Sub Array Formed by Consecutive integers.
+-- 
+
+**5. Find Max Length Sub Array Having the given Sum. 
+--
+Approach -1 :-  By using naive Solution, first we will be getting all the possible Sub -Arrays And then will get their Sum to have the desired sum. but this approach 
+will take the time complexity as n2 for 2 For Loop Inside For Loop and n for Sum Validation so total will be n3.
+
+Approach -2 :- By Using Map Solution, We will insert each element and it index in map and will monitor the target-Sum Existance at each element. 
+if it exists Will take the length and will update the max Length.
+
+6. Given Binary Array, Find Largest Number of Sub-Arrays Having Equal Number of Zero and one.
+--Approach -> Convert All Zero to -1 and Now find the largest Length Array with Zero Sum and use Approach Mentioned in 5. 
+
+7. Find Max Products of Two Integers in an array. 
+
+Approach -1 :- Two Integers A. If positive then would be maximum if they both are maximum and Integers are negative then product will be maximum
+if they both are minimum.
+
+8. Sort an array of 0’s, 1’s, and 2’s. :-
+
+Approach -1 :- We can do it in linear time by getting first each count and get Increase Each Count in HashMap And then again Create one new Array with 
+the fetched zeros and one's count. 
+
+*Approach -2 :- We will use 3 Way Partition Algorithm to sort this problem. Here we used to have one pivot point so one value just before the pivot
+and will insert them in Starting and increase ++start or if it greater than pivot point will swap it in end and will decrease the end or if 
+it is in Middle then we will let be in middle by just increasing ++mid.
+
+9. In place Merge Two Sorted Arrays.
+ 
+Approach -1 :- Took the approach from Merge Sort Algorithm and completed it by nlogn.
+
+** 10. Merge Sort Of Two Arrays. 
+--1. We Will call the sort Method of Array by Parsing Array, It's First and Last Index and then Call this Method Internally by checking l< LastElement
+then will merge the Output of these 2 Sorted Arrays in Merge Method. 
+
+In this way the time Complexity Would be nlogn. 
+--
+
+** 11. Given a binary array, find the index of 0 to be replaced with 1 to get the maximum length sequence of continuous ones.
+
+Approach -1 :- We will fetch and track the maximum Number of Ones between Zero's including the last zero that will be made now as 1. 
+--
+
+12. Rearrange an array with alternate high and low elements.
+
+Approach-1 :-- We Will Iterate the array for Even Elements and then Will compare this with it's immediate before and after to make each middle Element
+largest than it's before and Previous.
+
+13. Find Equilbrium Index of an array.
+
+Approach -1 :-- Get the sum of Each Array and then Substract the previous Element Sum and Current Element and equate with Left Sum And Validate
+Whether These Left and Right Sum are equal or not.
+
+14. Find Max Sum Path Involving given 2 Sorted Arrays. 
+--> Here we will take the sum between common elements and will will get the max sum between each common element. Will use here merge sort
+technique.
+
+15. get the max Profit by any number of transactions in the shares. 
+--> here we will find the local minimum of the every Increasing sequece of the array and will sell the Share once the sequence ends. 
+
+16. Find Triplets with given sum in an array.
+--> first we will insert every element of the array to map By key as Array Element and value as it's index. 
+--> now will take the first element of the array and for this use another for loop that will search index 1 to n again and will check the target - (arr[i] + arr[j]) existance in the map where map.get(value) not equal to i & j.
+--> Time complexity would be n square.
+
+
+
+
+----------
+
+TODO :-
+How to get unique pairs out of many Intergers pairs..
+Practice -> Arrays.binarySearch Method java.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

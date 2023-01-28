@@ -1,0 +1,15 @@
+
+Sample Curl Request Linux
+
+curl --insecure --location --request POST 'https://vflocaltest3xsql.eastus.cloudapp.azure.com/api/v2/register' \
+--header 'Content-Type: application/json' \
+-d '{
+    "username": "scim-api-user",
+    "password": "2022=Vectorflow"
+}'
+
+
+--Sample Curl Requests Windows 
+curl --insecure -X POST https://vflocaltest3xsql.eastus.cloudapp.azure.com/api/v2/register ^
+-H "Content-Type: application/json" ^
+-d "{ \"username\": \"scim-api-user\", \"password\": \"2022=Vectorflow\"}"

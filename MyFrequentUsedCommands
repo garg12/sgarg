@@ -1,0 +1,21 @@
+Git Revert command for specific commit. 
+
+1. git revert commitId. 
+--This will roll back the specific changes for that commit and we can push that to push roll back changes.
+
+2. git fetch & git checkout 
+
+3. git rebase commitId
+
+4. git clean -n 
+-- This is to know the status of git untracked files.
+
+5.  git clean -d -f
+-- This is to delete forcefully all untracked files.
+
+6. We can Iterate the map using streams .
+  map.entrySet( ).stream( ).filter( e -> e.getKey( ).equalsIgnoreCase( identifierValue ) )
+  
+7. 
+
+
