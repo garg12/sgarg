@@ -1,0 +1,26 @@
+1.@Data Annotation Spring Boot :-
+A. It is a convenient shortcut annotation that bundles the features of @ToString, @EqualsAndHashCode, @Getter / @Setter and
+ @RequiredArgsConstructor together.
+B. It generates all the boilerplate that is normally associated with simple POJOs ie, getters for all fields,
+ setters for all non-final fields, and appropriate toString, equals and hashCode implementations that involve the fields of the class,
+ and a constructor that initializes all final fields, as well as all non-final fields with no initializer that have been marked with @NonNull, 
+ in order to ensure the field is never null.
+ 
+ *******************************************************
+2. Apache POI is a complex Java library for working with Excel files.
+
+When working with the newer .xlsx file format, we would use the XSSFWorkbook, XSSFSheet, XSSFRow and XSSFCell classes.
+To work with the older .xls format, we use the HSSFWorkbook, HSSFSheet, HSSFRow and HSSFCell classes.
+
+itext/PDFBox  Library We can 
+
+Scheduler is the Main Interface in Quartz API where we used to register the jobs and triggers.and we use its start method that fire the job.
+Spring's SchedulerFactoryBean provides bean-style usage for configuring a Scheduler,
+ managing its life-cycle within the application context,
+ and exposing the Scheduler as a bean for dependency injection.
+ 
+1. 
+
+
+***************
+

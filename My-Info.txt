@@ -1,0 +1,63 @@
+*****************************************************
+SQL:
+
+https://vflocaltest1.eastus.cloudapp.azure.com/login
+
+DB SERVER : 40.121.54.5
+
+DB Name : vfdata2xdev/vfmaster2xdev/vflogs2xdev
+
+****************************************************
+
+ORACLE:
+
+https://vflocaltest2.eastus.cloudapp.azure.com/loginDB 
+
+Server : 40.87.110.154:1521/orcl.5af5cnund04encvs1dnbakgxkf.bx.internal.cloudapp.net
+
+Schema : vfdata2xdev / vfmaster2xdev / vflogs2xdev
+
+in hostname for winscp provide url -> https://vflocaltest1.eastus.cloudapp.azure.com/login
+
+protocol -> SFTP
+username = VFAdmin
+password = Vectorflow=2019
+
+Web Login Password
+username = admin 
+password = 2022=Vectorflow
+
+****************************************************
+vfbuildtest1 :-
+
+vfbuildtest1.eastus.cloudapp.azure.com
+vfbuildtest2.eastus.cloudapp.azure.com
+
+
+
+$KAFKA_HOME/bin/kafka-console-consumer --bootstrap-server localhost:9092 --topic SNK_AVIGILON_IDENTITIES --from-beginning --max-messages 100
+
+VF_SRC_FILESYSTEM_IDENTITIES
+
+
+------------------
+1. For Staging Env Commands
+To Put Any File - First place the file on Home Directory of deepakc User.
+Then Login open putty -> then Use Command to get as Root user ->   Sudo su -
+
+3. Move the file to desired location
+4. Give It Appropriate Access By  -> sudo chmod 775 filename
+5. sudo chown VFAdmin:VFAdmin filename
+6. then open another terminal And enter -> su -
+7. Password is -> 2022=Vectorflow
+8. Hurrah && Do Your Work.
+
+VF_SRC_HR_IDENTITIES
+
+KAFKA_HOME/bin/kafka-topics --delete --topic VF_SRC_HR_IDENTITIES --bootstrap-server localhost:9092
+
+$KAFKA_HOME/bin/kafka-consumer-groups --describe --group streams-hr-person-processor --bootstrap-server localhost:9092
+
+$KAFKA_HOME/bin/kafka-consumer-groups --describe --group application09 --bootstrap-server localhost:9092
+
+--------------------------------------
